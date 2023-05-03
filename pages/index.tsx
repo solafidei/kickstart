@@ -6,10 +6,13 @@ import {
   Card,
   CardActions,
   CardContent,
+  Fab,
+  Grid,
   Typography,
 } from "@mui/material";
 
 import AddCircleIcon from "@mui/icons-material/AddCircle";
+import Layout from "../components/Layout/Layout";
 
 type CampaignIndexProps = {
   campaigns: CampaignAddress[];
@@ -35,11 +38,27 @@ const Index: React.FC<CampaignIndexProps> = ({ campaigns }) => {
 
   return (
     <>
-      <Typography variant="h5">Open Campaigns</Typography>
-      {RenderCampaigns}
-      <Button variant="contained" startIcon={<AddCircleIcon />}>
-        Create Campaign
-      </Button>
+      <Layout>
+        <Typography variant="h5">Open Campaigns</Typography>
+
+        <Grid container spacing={2}>
+          <Grid
+            item
+            xs={12}
+            container
+            alignItems="flex-end"
+            justifyContent="flex-end"
+          >
+            <Fab variant="extended">
+              <AddCircleIcon />
+              Create Campaign
+            </Fab>
+          </Grid>
+          <Grid item xs={12}>
+            {RenderCampaigns}
+          </Grid>
+        </Grid>
+      </Layout>
     </>
   );
 };
