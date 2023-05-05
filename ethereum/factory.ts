@@ -1,12 +1,8 @@
 import { Contract } from "web3-eth-contract";
-import getWeb3 from "./getWeb3";
+import web3 from "./web3";
 import CampaignFactory from "./build/CampaignFactory.json";
 
-let instance: Contract;
-
-const web3Instance = getWeb3();
-
-instance = new web3Instance.eth.Contract(
+const instance = new web3.eth.Contract(
   JSON.parse(CampaignFactory.interface),
   "0x92090A270199Be1ed1941796c5973A81325CEAAc"
 );
