@@ -24,4 +24,6 @@ const deploy = async () => {
   console.log("Contract deployed to", result.options.address);
   provider.engine.stop();
 };
-deploy();
+deploy()
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));

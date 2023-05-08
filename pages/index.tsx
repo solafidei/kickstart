@@ -13,6 +13,7 @@ import {
 
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import Layout from "../components/Layout/Layout";
+import Link from "next/link";
 
 type CampaignIndexProps = {
   campaigns: CampaignAddress[];
@@ -28,9 +29,11 @@ const Index: React.FC<CampaignIndexProps> = ({ campaigns }) => {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button variant="outlined" size="small">
-            View Campaign
-          </Button>
+          <Link href={`/campaigns/${address}`}>
+            <Button variant="outlined" size="small">
+              View Campaign
+            </Button>
+          </Link>
         </CardActions>
       </Card>
     );
@@ -49,10 +52,12 @@ const Index: React.FC<CampaignIndexProps> = ({ campaigns }) => {
             alignItems="flex-end"
             justifyContent="flex-end"
           >
-            <Fab variant="extended">
-              <AddCircleIcon />
-              Create Campaign
-            </Fab>
+            <Link href="/campaigns/new">
+              <Fab variant="extended">
+                <AddCircleIcon />
+                Create Campaign
+              </Fab>
+            </Link>
           </Grid>
           <Grid item xs={12}>
             {RenderCampaigns}
