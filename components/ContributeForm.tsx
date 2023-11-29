@@ -33,7 +33,7 @@ const Header: React.FC<{ address: string }> = ({ address }) => {
           from: accounts[0],
           value: web3.utils.toWei(amountToContribute, "ether"),
         });
-      router.push(`/campaigns/${address}`);
+      router.reload();
     } catch (err: any) {
       setError(err.message);
     }
