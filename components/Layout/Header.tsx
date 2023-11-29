@@ -8,6 +8,7 @@ import {
 } from "@mui/material";
 import React from "react";
 import Link from "next/link";
+import { Web3Button, Web3NetworkSwitch } from "@web3modal/react";
 
 const Header: React.FC = () => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
@@ -43,6 +44,8 @@ const Header: React.FC = () => {
               +
             </Button>
           </Link>
+          <Web3Button icon="show" label="Connect Wallet" balance="show" />
+          <Web3NetworkSwitch />
         </Toolbar>
       </Container>
     </AppBar>

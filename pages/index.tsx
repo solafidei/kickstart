@@ -14,6 +14,8 @@ import {
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import Layout from "../components/Layout/Layout";
 import Link from "next/link";
+import { Web3Button, Web3NetworkSwitch } from "@web3modal/react";
+import CustomButton from "../components/ConnectWallet";
 
 type CampaignIndexProps = {
   campaigns: CampaignAddress[];
